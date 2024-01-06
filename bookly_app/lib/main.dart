@@ -17,10 +17,11 @@ class Bookly extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       child: GetMaterialApp(
-        theme: ThemeData().copyWith(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: kprimaryColor,
         ),
-        home: SplashView(),
+        home: const SplashView(),
       ),
     );
   }
