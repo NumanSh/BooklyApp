@@ -40,7 +40,7 @@ class CustomizeAppBar extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(
               Icons.search,
-              size: 30,
+              size: 31,
             ),
           )
         ],
