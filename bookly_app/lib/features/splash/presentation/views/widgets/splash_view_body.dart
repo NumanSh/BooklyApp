@@ -1,5 +1,8 @@
+import 'package:bookly_app/core/themes/colors/colors.dart';
+import 'package:bookly_app/features/home/presentaion/view/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'sliding_widget.dart';
 
@@ -23,25 +26,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-    animationControllerText = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
-
-    slidingAnimationText = Tween<Offset>(
-      begin: const Offset(0, 20),
-      end: const Offset(0, 0),
-    ).animate(animationControllerText);
-    animationControllerText.forward();
+    navigateToHomePageView();
+    initSlidingTransistion();
     ////////////////////////////////////////////////////////////////////////////
-    animationControllerLogo = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 2),
-    );
-    slidingAnimationLogo =
-        Tween<Offset>(begin: const Offset(0, -20), end: const Offset(0, 0))
-            .animate(animationControllerLogo);
-    animationControllerLogo.forward();
+    initSlidingTransitionLogo();
   }
 
   @override
@@ -61,5 +49,44 @@ class _SplashViewBodyState extends State<SplashViewBody>
         SlidingWidget(slidingAnimation: slidingAnimationText)
       ],
     ));
+  }
+
+  void initSlidingTransistion() {
+    animationControllerText = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+
+    slidingAnimationText = Tween<Offset>(
+      begin: const Offset(0, 20),
+      end: const Offset(0, 0),
+    ).animate(animationControllerText);
+    animationControllerText.forward();
+  }
+
+  void initSlidingTransitionLogo() {
+    animationControllerLogo = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+    slidingAnimationLogo =
+        Tween<Offset>(begin: const Offset(0, -20), end: const Offset(0, 0))
+            .animate(animationControllerLogo);
+    animationControllerLogo.forward();
+  }
+
+  void navigateToHomePageView() {
+    Future.delayed(const Duration(seconds: 3), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.leftToRightWithFade,
+          duration: kHomeTransitionDuration);
+    });
+  }
+
+  @override
+  void dispose() {
+    animationControllerText.dispose();
+    animationControllerLogo.dispose();
+    super.dispose();
   }
 }
