@@ -1,4 +1,4 @@
-import 'package:bookly_app/core/themes/colors/colors.dart';
+import 'package:bookly_app/core/themes/colors/constants.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,3 +31,4 @@ class Bookly extends StatelessWidget {
     );
   }
 }
+//ملاحظة مهمة وين بتلاقي ليست فيو حط فوقها اكسبانديد

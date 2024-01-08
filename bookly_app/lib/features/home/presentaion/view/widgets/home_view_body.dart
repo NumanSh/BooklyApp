@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
+import 'best_seller_list_view.dart';
 import 'custom_text.dart';
 import 'customize_app_bar.dart';
 import 'feature_book_list_view.dart';
@@ -11,47 +12,33 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const CustomizeAppBar(),
-            const FeatureBookListView(),
-            Gap(50.h),
-            const CustomHomeTextBestSeller(),
-            Gap(15.h),
-            const BestSellerListViewItem()
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 125.h,
-      child: AspectRatio(
-        aspectRatio: 2.7 / 4,
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10.r),
-            image: const DecorationImage(
-              fit: BoxFit.fill,
-              image: AssetImage(
-                'assets/images/Image.png',
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0),
+                child: CustomizeAppBar(),
               ),
-            ),
+              const FeatureBookListView(),
+              Gap(40.h),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30.0),
+                child: CustomHomeTextBestSeller(),
+              ),
+              Gap(15.h),
+            ],
           ),
         ),
-      ),
+        const SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25.0),
+            child: BestSillerListView(),
+          ),
+        )
+      ],
     );
   }
 }

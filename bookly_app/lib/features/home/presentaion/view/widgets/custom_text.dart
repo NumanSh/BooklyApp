@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/themes/colors/colors.dart';
+import '../../../../../core/themes/colors/constants.dart';
 import '../../../../../core/themes/colors/styles.dart';
 
 class CustomHomeTextBestSeller extends StatelessWidget {
