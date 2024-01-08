@@ -11,11 +11,16 @@ class CustomHomeTextBestSeller extends StatelessWidget {
     return Text.rich(
       TextSpan(
         children: [
-          TextSpan(text: 'Best ', style: Styles.fontSize25Bold),
+          TextSpan(
+            text: 'Best ',
+            style: Styles.fontSize25Bold,
+          ),
           TextSpan(
             text: 'Seller',
-            style: Styles.fontSize18SemiBold
-                .copyWith(fontWeight: FontWeight.bold, color: kamberColor),
+            style: Styles.fontSize18SemiBold.copyWith(
+              fontWeight: FontWeight.bold,
+              color: kamberColor,
+            ),
           ),
         ],
       ),

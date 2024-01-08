@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/themes/colors/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -21,11 +22,8 @@ class CustomizeAppBar extends StatelessWidget {
               ),
               Gap(10.w),
               RichText(
-                text: const TextSpan(children: [
-                  TextSpan(
-                      text: 'Bookly',
-                      style:
-                          TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+                text: TextSpan(children: [
+                  TextSpan(text: 'Bookly', style: Styles.fontSize25Bold),
                   TextSpan(
                     text: 'App',
                     style: TextStyle(
