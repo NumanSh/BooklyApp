@@ -24,7 +24,7 @@ class CustomizeAppBar extends StatelessWidget {
               RichText(
                 text: TextSpan(children: [
                   TextSpan(text: 'Bookly', style: Styles.fontSize25Bold),
-                  TextSpan(
+                  const TextSpan(
                     text: 'App',
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.amber),

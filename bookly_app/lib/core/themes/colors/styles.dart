@@ -10,4 +10,16 @@ class Styles {
     fontSize: 18.sp,
     fontWeight: FontWeight.w600,
   );
+  static TextStyle fontSize22Normal = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.normal,
+  );
+  static TextStyle fontSize14Normal = TextStyle(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.normal,
+  );
+  static TextStyle fontSize16Medium = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w500,
+  );
 }
