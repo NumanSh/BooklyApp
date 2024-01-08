@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FeatureListViewItem extends StatelessWidget {
   const FeatureListViewItem({super.key});
@@ -11,7 +12,7 @@ class FeatureListViewItem extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16.r),
             image: const DecorationImage(
               fit: BoxFit.fill,
               image: AssetImage(

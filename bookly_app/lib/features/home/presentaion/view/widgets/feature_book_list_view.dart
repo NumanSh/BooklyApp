@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'customize_list_view_item.dart';
 
@@ -12,9 +13,9 @@ class FeatureBookListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.only(left: 8, top: 8),
-            child: FeatureListViewItem(),
+          return Padding(
+            padding: EdgeInsets.only(left: 8.w, top: 8.h),
+            child: const FeatureListViewItem(),
           );
         },
       ),
