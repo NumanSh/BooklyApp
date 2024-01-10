@@ -22,4 +22,8 @@ class Styles {
     fontSize: 16.sp,
     fontWeight: FontWeight.w500,
   );
+  static TextStyle fontSize30Bold = TextStyle(
+    fontSize: 30.sp,
+    fontWeight: FontWeight.w900,
+  );
 }
