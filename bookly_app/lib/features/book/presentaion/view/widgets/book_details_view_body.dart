@@ -17,51 +17,63 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 8.h),
-      child: Column(
-        children: [
-          const CustomBookDetailsAppBar(),
-          Padding(
-            padding:
-                EdgeInsets.symmetric(horizontal: width * 0.2, vertical: 15.h),
-            child: const CustomBookImage(),
-          ),
-          Gap(20.h),
-          Text(
-            'The Jungle Book',
-            style: Styles.fontSize30Bold.copyWith(fontFamily: kinstrumentSerif),
-          ),
-          Gap(4.h),
-          Opacity(
-            opacity: 0.7,
-            child: Text(
-              'Rudyard Kipling',
-              style:
-                  Styles.fontSize16Medium.copyWith(fontStyle: FontStyle.italic),
+    return CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          // hasScrollBody used for Setting this value to false will allow the child to fill the remainder of the viewport and not extend further
+          hasScrollBody: false,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 8.h),
+            child: Column(
+              children: [
+                const CustomBookDetailsAppBar(),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: width * 0.2, vertical: 15.h),
+                  child: const CustomBookImage(),
+                ),
+                Gap(20.h),
+                Text(
+                  'The Jungle Book',
+                  style: Styles.fontSize30Bold
+                      .copyWith(fontFamily: kinstrumentSerif),
+                ),
+                Gap(4.h),
+                Opacity(
+                  opacity: 0.7,
+                  child: Text(
+                    'Rudyard Kipling',
+                    style: Styles.fontSize16Medium
+                        .copyWith(fontStyle: FontStyle.italic),
+                  ),
+                ),
+                Gap(8.h),
+                const RatingBook(mainAxisAlignment: MainAxisAlignment.center),
+                Gap(20.h),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 6.0),
+                  child: BookAction(),
+                ),
+                Expanded(child: Gap(40.h)),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    'You Can See Also:',
+                    style: Styles.fontSize14Normal.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                Gap(10.h),
+                const SimilarBooksListView(),
+                SizedBox(
+                  height: 25.h,
+                )
+              ],
             ),
           ),
-          Gap(8.h),
-          const RatingBook(mainAxisAlignment: MainAxisAlignment.center),
-          Gap(20.h),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 6.0),
-            child: BookAction(),
-          ),
-          Gap(40.h),
-          Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              'You Can See Also:',
-              style: Styles.fontSize14Normal.copyWith(
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          Gap(10.h),
-          const SimilarBooksListView(),
-        ],
-      ),
+        )
+      ],
     );
   }
 }
