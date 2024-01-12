@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+
+import '../../../../search/presentation/views/search_view.dart';
 
 class CustomizeAppBar extends StatelessWidget {
   const CustomizeAppBar({super.key});
@@ -35,7 +38,9 @@ class CustomizeAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(() => const SearchView());
+            },
             icon: const Icon(
               Icons.search,
               size: 31,
