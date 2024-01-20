@@ -29,6 +29,7 @@ class HomeRemoteDataResourceImpl implements HomeRemoteDataResource {
     var data = await apiServise
         .get('volumes?Filtering=free-ebooks&sorting=newest&q=medicine');
     List<BookEntity> books = getBookList(data);
+    saveBooksData(books, knewestBox);
     return (books);
   }
 
