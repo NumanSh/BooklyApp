@@ -2,9 +2,9 @@ import 'package:bookly_app/core/themes/colors/constants.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:hive/hive.dart';
 
-import '../../../../../core/api_service/api_service.dart';
-import '../../../../../core/functions/save_books.dart';
-import '../../../domain/entities/book_entity.dart';
+import '../../../../core/api_service/api_service.dart';
+import '../../../../core/functions/save_books.dart';
+import '../../domain/entities/book_entity.dart';
 
 abstract class HomeRemoteDataResource {
   Future<List<BookEntity>> fetchFeaturedBooks();
