@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive/hive.dart';
 
-void main() {
+import 'features/home/domain/entities/book_entity.dart';
+
+void main() async {
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(kfeaturedBox);
   runApp(const Bookly());
 }
 

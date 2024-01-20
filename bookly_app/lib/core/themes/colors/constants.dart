@@ -6,3 +6,4 @@ const kamberColor = Color(0xffffbf00);
 const kHomeTransitionDuration = Duration(milliseconds: 300);
 const kGtSectar = 'Gt-sectra-fine';
 String? kinstrumentSerif = GoogleFonts.instrumentSerif().fontFamily;
+const String kfeaturedBox = 'Featured_box';
