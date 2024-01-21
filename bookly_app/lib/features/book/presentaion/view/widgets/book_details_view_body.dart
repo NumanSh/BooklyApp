@@ -1,5 +1,4 @@
 import 'package:bookly_app/core/themes/colors/styles.dart';
-import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:bookly_app/features/home/presentaion/view/widgets/custom_book_image.dart';
 import 'package:bookly_app/features/home/presentaion/view/widgets/rating_book.dart';
 import 'package:flutter/material.dart';

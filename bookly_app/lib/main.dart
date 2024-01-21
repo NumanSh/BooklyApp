@@ -4,8 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hive_flutter/adapters.dart';
 
-void main() {
+import 'features/home/domain/entities/book_entity.dart';
+
+void main() async {
+  await Hive.initFlutter();
+
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(kfeaturedBox);
+  await Hive.openBox(knewestBox);
   runApp(const Bookly());
 }
 
@@ -32,3 +40,9 @@ class Bookly extends StatelessWidget {
   }
 }
 //ملاحظة مهمة وين بتلاقي ليست فيو حط فوقها اكسبانديد
+
+
+// ملاحظة مهمة
+// استعملنا اكشتنن لتحويل الجيسون للدارت 
+// عن طريق نسخ ملف الجيسون وبضغط على كونترل شفت بي
+// بختار بعدها json to dart from clipboard

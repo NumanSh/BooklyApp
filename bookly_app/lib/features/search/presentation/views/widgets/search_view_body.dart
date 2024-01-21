@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../home/presentaion/view/widgets/bestSeller_listView_item.dart';
+import '../../../../home/presentaion/view/widgets/best_seller_listView_item.dart';
 import 'custom-search-text-field.dart';
 
 class SearchViewBody extends StatelessWidget {
